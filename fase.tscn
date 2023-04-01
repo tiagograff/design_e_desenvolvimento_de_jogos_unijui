@@ -1,69 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2mfjfj2h3o7k"]
+[gd_scene load_steps=5 format=3 uid="uid://bm6o2p2eybn27"]
 
-[ext_resource type="Texture2D" uid="uid://cjlk40khom7kx" path="res://icon.svg" id="1_s2ldn"]
-[ext_resource type="Script" path="res://personagem.gd" id="2_5exjw"]
+[ext_resource type="PackedScene" uid="uid://c73byh8b7ycxh" path="res://chao.tscn" id="1_fd3gs"]
+[ext_resource type="Texture2D" uid="uid://d4my43op45fbx" path="res://icon.svg" id="1_yup6t"]
+[ext_resource type="PackedScene" path="res://personagem.tscn" id="3_qjj62"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_771c1"]
-size = Vector2(800, 50)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dho6n"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ypfa"]
 radius = 50.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0vby"]
-radius = 30.0
-height = 100.0
-
 [node name="fase" type="Node2D"]
-position = Vector2(2, 0)
 
-[node name="chão" type="StaticBody2D" parent="."]
-position = Vector2(402, 622)
+[node name="chao" parent="." instance=ExtResource("1_fd3gs")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chão"]
-shape = SubResource("RectangleShape2D_771c1")
+[node name="objeto" type="RigidBody2D" parent="."]
+position = Vector2(892, 258)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objeto"]
+shape = SubResource("CircleShape2D_7ypfa")
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="chão"]
-scale = Vector2(6.27344, 0.382813)
-texture = ExtResource("1_s2ldn")
+[node name="Sprite2D" type="Sprite2D" parent="objeto"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_yup6t")
 metadata/_edit_lock_ = true
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(461, 119)
+[node name="personagem" parent="." instance=ExtResource("3_qjj62")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_dho6n")
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(-4, 0.499995)
-scale = Vector2(0.859375, 0.789063)
-texture = ExtResource("1_s2ldn")
-metadata/_edit_lock_ = true
-
-[node name="personagem" type="CharacterBody2D" parent="."]
-position = Vector2(161, 384)
-script = ExtResource("2_5exjw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="personagem"]
-shape = SubResource("CapsuleShape2D_b0vby")
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="personagem"]
-scale = Vector2(0.5, 0.765625)
-texture = ExtResource("1_s2ldn")
-metadata/_edit_lock_ = true
-
-[node name="Camera2D" type="Camera2D" parent="personagem"]
-
-[node name="chão2" type="StaticBody2D" parent="."]
-position = Vector2(740, 573)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chão2"]
-shape = SubResource("RectangleShape2D_771c1")
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="chão2"]
-scale = Vector2(6.27344, 0.382813)
-texture = ExtResource("1_s2ldn")
-metadata/_edit_lock_ = true
+[node name="chao2" parent="." instance=ExtResource("1_fd3gs")]
+position = Vector2(1424, 442)

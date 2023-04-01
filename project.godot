@@ -10,14 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Design Desenvolvimento De Jogos Unijui"
+config/name="jogo_plataforma"
 run/main_scene="res://fase.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[dotnet]
-
-project/assembly_name="Design Desenvolvimento De Jogos Unijui"
 
 [rendering]
 

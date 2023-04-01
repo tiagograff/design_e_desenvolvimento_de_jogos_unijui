@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
+var estado="parado"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -26,3 +28,27 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if estado=="parado":
+		if velocity.x!=0:
+			estado="correndo"
+			$robo/AnimationPlayer.play("correndo")
+	if estado=="correndo":
+		if velocity.x==0:
+			estado="parado"
+			$robo/AnimationPlayer.play("parado")
+			
+	if estado=="parado" or estado=="correndo":
+		if is_on_floor()==false:
+			estado="pulando"
+			$robo/AnimationPlayer.play("pulando")
+	if estado=="pulando":
+		if is_on_floor()==true:
+			estado="parado"	
+			$robo/AnimationPlayer.play("parado")
+			
+	if velocity.x>0:
+		$robo.scale.x=0.3
+	if velocity.x<0:
+		$robo.scale.x=-0.3
+		
