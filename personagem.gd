@@ -11,6 +11,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -52,3 +55,7 @@ func _physics_process(delta):
 	if velocity.x<0:
 		$robo.scale.x=-0.3
 		
+func _on_hit_box_area_entered(area):
+	if area.is_in_group("buraco"):
+		get_node("../Canvas_HUD/LabelGameOver").visible = true
+		get_tree().paused = true
