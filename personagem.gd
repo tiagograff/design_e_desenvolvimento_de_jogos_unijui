@@ -10,7 +10,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
@@ -55,7 +54,23 @@ func _physics_process(delta):
 	if velocity.x<0:
 		$robo.scale.x=-0.3
 		
-func _on_hit_box_area_entered(area):
+	if $ray_pulo.is_colliding():
+		var obj=$ray_pulo.get_collider()
+		if obj.is_in_group("inimigo"):
+			obj.queue_free()
+			velocity.y = JUMP_VELOCITY
+			
+			
+		
+
+
+func _on_hitbox_area_entered(area):
 	if area.is_in_group("buraco"):
-		get_node("../Canvas_HUD/LabelGameOver").visible = true
-		get_tree().paused = true
+		get_node("../canvas_HUD/label_gameover").visible=true
+		get_tree().paused=true
+
+
+func _on_hitbox_body_entered(body):
+	if body.is_in_group("inimigo"):
+		get_node("../canvas_HUD/label_gameover").visible=true
+		get_tree().paused=true		
