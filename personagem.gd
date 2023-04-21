@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var fireball_comp=preload("res://fireball.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var estado="parado"
@@ -8,8 +8,15 @@ var estado="parado"
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 func _physics_process(delta):
+	if Input.is_action_just_pressed("tiro"):
+		var fireball=fireball_comp.instantiate()
+		var lado=sign($robo.scale.x)
+		fireball.position=self.position+Vector2(30*lado,-30)
+		fireball.linear_velocity=Vector2(lado*1000,0)
+		get_node("..").add_child(fireball)
+	
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
@@ -57,18 +64,13 @@ func _physics_process(delta):
 	if $ray_pulo.is_colliding():
 		var obj=$ray_pulo.get_collider()
 		if obj.is_in_group("inimigo"):
-			obj.queue_free()
+			obj.sofre_dano()
 			velocity.y = JUMP_VELOCITY
 			
-			
-		
-
-
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("buraco"):
 		get_node("../canvas_HUD/label_gameover").visible=true
 		get_tree().paused=true
-
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("inimigo"):

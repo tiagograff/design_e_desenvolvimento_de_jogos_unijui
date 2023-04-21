@@ -1,12 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://5n7183hj6uul"]
+[gd_scene load_steps=9 format=3 uid="uid://5n7183hj6uul"]
 
 [ext_resource type="Script" path="res://slime.gd" id="1_lspuh"]
-[ext_resource type="Texture2D" path="res://sprites/slime_stand_01.png" id="1_puvp4"]
-[ext_resource type="Texture2D" path="res://sprites/slime_stand_02.png" id="2_p306r"]
-[ext_resource type="Texture2D" path="res://sprites/slime_stand_03.png" id="3_g0h67"]
+[ext_resource type="Texture2D" uid="uid://cuwfd0k6gtaxd" path="res://sprites/slime_stand_01.png" id="1_puvp4"]
+[ext_resource type="Texture2D" uid="uid://btx23jl1wl0st" path="res://sprites/slime_death_01.png" id="2_7d3r1"]
+[ext_resource type="Texture2D" uid="uid://d34cf64fcqsp8" path="res://sprites/slime_stand_02.png" id="2_p306r"]
+[ext_resource type="Texture2D" uid="uid://who4t21v30a3" path="res://sprites/slime_stand_03.png" id="3_g0h67"]
+[ext_resource type="Texture2D" uid="uid://ce5okhdghu0lb" path="res://sprites/slime_death_02.png" id="3_i7wfp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xtkyn"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7d3r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i7wfp")
+}],
+"loop": false,
+"name": &"desmaio",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_puvp4")
@@ -35,9 +48,10 @@ script = ExtResource("1_lspuh")
 position = Vector2(0, -37)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xtkyn")
-animation = &"stand"
+animation = &"desmaio"
 autoplay = "stand"
-frame_progress = 0.541337
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30)
