@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpnmay73ykoyj"]
+[gd_scene load_steps=10 format=3 uid="uid://cpnmay73ykoyj"]
 
 [ext_resource type="Script" path="res://slime.gd" id="1_lspuh"]
 [ext_resource type="Texture2D" uid="uid://cuwfd0k6gtaxd" path="res://sprites/slime_stand_01.png" id="1_puvp4"]
@@ -41,6 +41,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3bhah"]
 radius = 30.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqxaw"]
+radius = 35.0
+
 [node name="slime" type="CharacterBody2D" groups=["inimigo"]]
 script = ExtResource("1_lspuh")
 
@@ -72,3 +75,11 @@ target_position = Vector2(0, 40)
 [node name="ray_chao_esq" type="RayCast2D" parent="."]
 position = Vector2(-35, -33)
 target_position = Vector2(0, 40)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_iqxaw")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

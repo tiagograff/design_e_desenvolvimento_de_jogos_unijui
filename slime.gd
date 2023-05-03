@@ -50,3 +50,9 @@ func sofre_dano():
 	estado="inativo"
 	$CollisionShape2D.disabled=true
 	$anim.play("desmaio")
+
+
+func _on_hitbox_body_entered(body):
+	if body.is_in_group("fireball"):
+		sofre_dano()
+		body.queue_free()
