@@ -998,7 +998,7 @@ metadata/_edit_lock_ = true
 [node name="tronco" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(0, 18)
 rotation = 0.110174
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/tronco"]

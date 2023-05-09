@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkxuk6x2kw7jm"]
+
+[ext_resource type="Texture2D" uid="uid://cxbuschn405qn" path="res://sprites/chao1.png" id="1_oh2mr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvcj"]
+size = Vector2(64, 64)
+
+[node name="chao1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oh2mr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5bvcj")

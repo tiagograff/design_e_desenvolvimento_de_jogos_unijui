@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm6o2p2eybn27"]
+[gd_scene load_steps=11 format=3 uid="uid://bm6o2p2eybn27"]
 
-[ext_resource type="PackedScene" uid="uid://c73byh8b7ycxh" path="res://chao.tscn" id="1_fd3gs"]
 [ext_resource type="PackedScene" uid="uid://630qfh2rdyov" path="res://personagem.tscn" id="3_qjj62"]
 [ext_resource type="Script" path="res://label_gameover.gd" id="4_08hrr"]
+[ext_resource type="PackedScene" uid="uid://dax3cqkj5h2ke" path="res://chao_2.tscn" id="4_jluxc"]
+[ext_resource type="PackedScene" uid="uid://dkxuk6x2kw7jm" path="res://chao_1.tscn" id="5_5lrli"]
 [ext_resource type="PackedScene" uid="uid://cpnmay73ykoyj" path="res://slime.tscn" id="5_f3j1h"]
+[ext_resource type="PackedScene" uid="uid://bh8kmw54d373h" path="res://poste.tscn" id="6_ksl63"]
+[ext_resource type="Texture2D" uid="uid://bsgqhggceqv3g" path="res://sprites/fundo.png" id="7_ja2gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bldr"]
 size = Vector2(3353, 1000)
@@ -16,12 +19,8 @@ default_font_size = 100
 
 [node name="fase" type="Node2D"]
 
-[node name="chao" parent="." instance=ExtResource("1_fd3gs")]
-
 [node name="personagem" parent="." instance=ExtResource("3_qjj62")]
-
-[node name="chao2" parent="." instance=ExtResource("1_fd3gs")]
-position = Vector2(1424, 442)
+position = Vector2(128, 256)
 
 [node name="area_fundo" type="Area2D" parent="." groups=["buraco"]]
 
@@ -45,3 +44,211 @@ script = ExtResource("4_08hrr")
 
 [node name="slime" parent="." instance=ExtResource("5_f3j1h")]
 position = Vector2(1443, 333)
+
+[node name="cenario" type="Node2D" parent="."]
+z_index = -20
+metadata/_edit_lock_ = true
+
+[node name="chao2" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(128, 448)
+
+[node name="chao7" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(192, 448)
+
+[node name="chao8" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(256, 448)
+
+[node name="chao9" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(320, 448)
+
+[node name="chao10" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(384, 448)
+
+[node name="chao11" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(448, 448)
+
+[node name="chao12" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(512, 448)
+
+[node name="chao13" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(576, 448)
+
+[node name="chao14" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(768, 384)
+
+[node name="chao15" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(832, 384)
+
+[node name="chao16" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1024, 384)
+
+[node name="chao39" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1024, 384)
+
+[node name="chao17" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1088, 384)
+
+[node name="chao18" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1152, 384)
+
+[node name="chao19" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1216, 384)
+
+[node name="chao20" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1280, 384)
+
+[node name="chao21" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1344, 384)
+
+[node name="chao22" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1408, 384)
+
+[node name="chao23" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1472, 384)
+
+[node name="chao24" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1536, 384)
+
+[node name="chao25" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1600, 384)
+
+[node name="chao1" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(64, 448)
+
+[node name="chao26" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(64, 512)
+
+[node name="chao27" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(128, 512)
+
+[node name="chao28" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(192, 512)
+
+[node name="chao29" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(256, 512)
+
+[node name="chao30" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(320, 512)
+
+[node name="chao31" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(384, 512)
+
+[node name="chao32" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(448, 512)
+
+[node name="chao33" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(512, 512)
+
+[node name="chao34" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(576, 512)
+
+[node name="chao35" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(768, 448)
+
+[node name="chao36" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(832, 448)
+
+[node name="chao37" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(832, 512)
+
+[node name="chao40" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1024, 448)
+
+[node name="chao41" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1024, 512)
+
+[node name="chao42" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1088, 448)
+
+[node name="chao43" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1088, 512)
+
+[node name="chao44" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1152, 448)
+
+[node name="chao45" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1152, 512)
+
+[node name="chao46" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1216, 448)
+
+[node name="chao47" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1216, 512)
+
+[node name="chao48" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1216, 512)
+
+[node name="chao49" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1280, 448)
+
+[node name="chao50" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1280, 512)
+
+[node name="chao51" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1344, 448)
+
+[node name="chao52" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1344, 512)
+
+[node name="chao53" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1408, 448)
+
+[node name="chao54" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1408, 512)
+
+[node name="chao55" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1472, 448)
+
+[node name="chao56" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1472, 512)
+
+[node name="chao57" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1536, 448)
+
+[node name="chao58" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1536, 512)
+
+[node name="chao59" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1600, 448)
+
+[node name="chao60" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1600, 512)
+
+[node name="chao38" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(768, 512)
+
+[node name="chao3" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(64, 384)
+
+[node name="chao4" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(64, 320)
+
+[node name="chao5" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(64, 256)
+
+[node name="chao6" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(64, 192)
+
+[node name="poste" parent="cenario" instance=ExtResource("6_ksl63")]
+position = Vector2(384, 384)
+
+[node name="poste2" parent="cenario" instance=ExtResource("6_ksl63")]
+position = Vector2(1152, 320)
+
+[node name="fundo" type="Node2D" parent="cenario"]
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+
+[node name="fundo" type="Sprite2D" parent="cenario/fundo"]
+z_index = -30
+position = Vector2(0, 256)
+texture = ExtResource("7_ja2gx")
+
+[node name="fundo2" type="Sprite2D" parent="cenario/fundo"]
+z_index = -30
+position = Vector2(1024, 256)
+texture = ExtResource("7_ja2gx")
+
+[node name="fundo3" type="Sprite2D" parent="cenario/fundo"]
+z_index = -30
+position = Vector2(2048, 256)
+texture = ExtResource("7_ja2gx")
