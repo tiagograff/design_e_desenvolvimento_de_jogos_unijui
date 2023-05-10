@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://630qfh2rdyov"]
+[gd_scene load_steps=6 format=3 uid="uid://630qfh2rdyov"]
 
 [ext_resource type="Script" path="res://personagem.gd" id="1_8fe5j"]
 [ext_resource type="PackedScene" uid="uid://dnyb5k4g0xo7q" path="res://robo.tscn" id="2_gmh5c"]
@@ -10,7 +10,9 @@ height = 86.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiabc"]
 size = Vector2(48, 83)
 
-[node name="personagem" type="CharacterBody2D"]
+[sub_resource type="SystemFont" id="SystemFont_7qh2f"]
+
+[node name="personagem" type="CharacterBody2D" groups=["personagem"]]
 position = Vector2(479, 283)
 script = ExtResource("1_8fe5j")
 metadata/_edit_horizontal_guides_ = [333.0]
@@ -42,6 +44,19 @@ metadata/_edit_lock_ = true
 [node name="ray_pulo" type="RayCast2D" parent="."]
 position = Vector2(0, 46)
 target_position = Vector2(0, 20)
+
+[node name="label_pensamento" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -82.0
+offset_top = -75.0
+offset_right = 190.0
+offset_bottom = -30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = SubResource("SystemFont_7qh2f")
+theme_override_font_sizes/font_size = 20
+text = "Preciso da chave ..."
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

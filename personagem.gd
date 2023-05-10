@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -500.0
 var estado="parado"
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var tem_chave=false
 
 
 func _physics_process(delta):
@@ -75,6 +76,14 @@ func _on_hitbox_area_entered(area):
 	if area.is_in_group("buraco"):
 		get_node("../canvas_HUD/label_gameover").visible=true
 		get_tree().paused=true
+	if area.is_in_group("porta"):
+		if tem_chave==false:
+			$label_pensamento.text="Preciso da chave..."
+			$label_pensamento.modulate=Color.WHITE
+			var tween = self.create_tween()
+			tween.tween_property($label_pensamento, "modulate", Color.WHITE, 5.0)
+			tween.tween_property($label_pensamento, "modulate", Color(1.0,1.0,1.0,0.0), 2.0)
+
 
 
 func _on_hitbox_body_entered(body):

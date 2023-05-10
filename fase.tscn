@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm6o2p2eybn27"]
+[gd_scene load_steps=16 format=3 uid="uid://bm6o2p2eybn27"]
 
 [ext_resource type="PackedScene" uid="uid://630qfh2rdyov" path="res://personagem.tscn" id="3_qjj62"]
 [ext_resource type="Script" path="res://label_gameover.gd" id="4_08hrr"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cpnmay73ykoyj" path="res://slime.tscn" id="5_f3j1h"]
 [ext_resource type="PackedScene" uid="uid://bh8kmw54d373h" path="res://poste.tscn" id="6_ksl63"]
 [ext_resource type="Texture2D" uid="uid://bsgqhggceqv3g" path="res://sprites/fundo.png" id="7_ja2gx"]
+[ext_resource type="Texture2D" uid="uid://bow60mbo48qs5" path="res://sprites/fundo2.png" id="7_moh34"]
+[ext_resource type="Texture2D" uid="uid://dgnj5pc8ql0x3" path="res://sprites/portal.png" id="9_3lwm3"]
+[ext_resource type="Texture2D" uid="uid://bt2ucswh7grdf" path="res://sprites/chave.png" id="10_iv10k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bldr"]
 size = Vector2(3353, 1000)
@@ -16,6 +19,12 @@ size = Vector2(3353, 1000)
 [sub_resource type="Theme" id="Theme_d5f72"]
 default_font = SubResource("SystemFont_2sede")
 default_font_size = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxijy"]
+size = Vector2(100, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecd7r"]
+size = Vector2(65, 35)
 
 [node name="fase" type="Node2D"]
 
@@ -45,9 +54,15 @@ script = ExtResource("4_08hrr")
 [node name="slime" parent="." instance=ExtResource("5_f3j1h")]
 position = Vector2(1443, 333)
 
+[node name="slime2" parent="." instance=ExtResource("5_f3j1h")]
+position = Vector2(1984, 384)
+
+[node name="slime3" parent="." instance=ExtResource("5_f3j1h")]
+position = Vector2(2240, 384)
+direction = -1.0
+
 [node name="cenario" type="Node2D" parent="."]
 z_index = -20
-metadata/_edit_lock_ = true
 
 [node name="chao2" parent="cenario" instance=ExtResource("4_jluxc")]
 position = Vector2(128, 448)
@@ -111,6 +126,45 @@ position = Vector2(1536, 384)
 
 [node name="chao25" parent="cenario" instance=ExtResource("4_jluxc")]
 position = Vector2(1600, 384)
+
+[node name="chao97" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1856, 256)
+
+[node name="chao98" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1984, 192)
+
+[node name="chao99" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1856, 64)
+
+[node name="chao100" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1664, 0)
+
+[node name="chao101" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1472, -64)
+
+[node name="chao102" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1408, -64)
+
+[node name="chao103" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1344, -64)
+
+[node name="chao104" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1280, -64)
+
+[node name="chao105" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1216, -64)
+
+[node name="chao106" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1152, -64)
+
+[node name="chao107" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1088, -64)
+
+[node name="chao108" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1024, -64)
+
+[node name="chao109" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(960, -64)
 
 [node name="chao1" parent="cenario" instance=ExtResource("5_5lrli")]
 position = Vector2(64, 448)
@@ -214,6 +268,114 @@ position = Vector2(1600, 448)
 [node name="chao60" parent="cenario" instance=ExtResource("5_5lrli")]
 position = Vector2(1600, 512)
 
+[node name="chao61" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1792, 448)
+
+[node name="chao62" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1792, 512)
+
+[node name="chao63" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1792, 576)
+
+[node name="chao64" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1856, 448)
+
+[node name="chao65" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1856, 512)
+
+[node name="chao66" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1856, 576)
+
+[node name="chao67" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1920, 448)
+
+[node name="chao68" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1920, 512)
+
+[node name="chao69" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1920, 576)
+
+[node name="chao70" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(1984, 448)
+
+[node name="chao71" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1984, 512)
+
+[node name="chao72" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(1984, 576)
+
+[node name="chao73" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2048, 448)
+
+[node name="chao74" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2048, 512)
+
+[node name="chao75" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2048, 576)
+
+[node name="chao76" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2112, 448)
+
+[node name="chao77" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2112, 512)
+
+[node name="chao78" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2112, 576)
+
+[node name="chao79" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2176, 448)
+
+[node name="chao80" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2176, 512)
+
+[node name="chao81" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2176, 576)
+
+[node name="chao82" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2240, 448)
+
+[node name="chao83" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2240, 512)
+
+[node name="chao84" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2240, 576)
+
+[node name="chao85" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2304, 448)
+
+[node name="chao86" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2304, 512)
+
+[node name="chao87" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2304, 576)
+
+[node name="chao88" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2368, 448)
+
+[node name="chao89" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2368, 512)
+
+[node name="chao90" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2368, 576)
+
+[node name="chao91" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2432, 448)
+
+[node name="chao92" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2432, 512)
+
+[node name="chao93" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2432, 576)
+
+[node name="chao94" parent="cenario" instance=ExtResource("4_jluxc")]
+position = Vector2(2496, 448)
+
+[node name="chao95" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2496, 512)
+
+[node name="chao96" parent="cenario" instance=ExtResource("5_5lrli")]
+position = Vector2(2496, 576)
+
 [node name="chao38" parent="cenario" instance=ExtResource("5_5lrli")]
 position = Vector2(768, 512)
 
@@ -235,20 +397,83 @@ position = Vector2(384, 384)
 [node name="poste2" parent="cenario" instance=ExtResource("6_ksl63")]
 position = Vector2(1152, 320)
 
-[node name="fundo" type="Node2D" parent="cenario"]
-modulate = Color(0.345098, 0.345098, 0.345098, 1)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="fundo" type="Sprite2D" parent="cenario/fundo"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+metadata/_edit_lock_ = true
+
+[node name="fundo" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.643137, 0.643137, 0.643137, 1)
+position = Vector2(0, 87)
+
+[node name="fundo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/fundo"]
+z_index = -30
+position = Vector2(0, 256)
+texture = ExtResource("7_moh34")
+metadata/_edit_lock_ = true
+
+[node name="fundo2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/fundo"]
+z_index = -30
+position = Vector2(1024, 256)
+texture = ExtResource("7_moh34")
+metadata/_edit_lock_ = true
+
+[node name="fundo3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/fundo"]
+z_index = -30
+position = Vector2(2048, 256)
+texture = ExtResource("7_moh34")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -10
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="fundo2" type="Node2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(0.309804, 0.309804, 0.309804, 1)
+metadata/_edit_lock_ = true
+
+[node name="fundo" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/fundo2"]
 z_index = -30
 position = Vector2(0, 256)
 texture = ExtResource("7_ja2gx")
+metadata/_edit_lock_ = true
 
-[node name="fundo2" type="Sprite2D" parent="cenario/fundo"]
+[node name="fundo2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/fundo2"]
 z_index = -30
 position = Vector2(1024, 256)
 texture = ExtResource("7_ja2gx")
+metadata/_edit_lock_ = true
 
-[node name="fundo3" type="Sprite2D" parent="cenario/fundo"]
+[node name="fundo3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2/fundo2"]
 z_index = -30
 position = Vector2(2048, 256)
 texture = ExtResource("7_ja2gx")
+metadata/_edit_lock_ = true
+
+[node name="porta" type="Area2D" parent="." groups=["porta"]]
+z_index = -10
+position = Vector2(2466, 416)
+
+[node name="Sprite2D" type="Sprite2D" parent="porta"]
+position = Vector2(0, -85)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_3lwm3")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porta"]
+position = Vector2(-3, -75)
+shape = SubResource("RectangleShape2D_dxijy")
+metadata/_edit_lock_ = true
+
+[node name="chave" type="Area2D" parent="." groups=["chave"]]
+position = Vector2(960, -192)
+
+[node name="Sprite2D" type="Sprite2D" parent="chave"]
+texture = ExtResource("10_iv10k")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chave"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_ecd7r")
+metadata/_edit_lock_ = true

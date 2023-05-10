@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 const JUMP_VELOCITY = -400.0
-var direction = 1.0
+@export var direction = 1.0
 var estado="ativo"
 var timer_inativo=2.0
 
