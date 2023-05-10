@@ -83,7 +83,9 @@ func _on_hitbox_area_entered(area):
 			var tween = self.create_tween()
 			tween.tween_property($label_pensamento, "modulate", Color.WHITE, 5.0)
 			tween.tween_property($label_pensamento, "modulate", Color(1.0,1.0,1.0,0.0), 2.0)
-
+	if area.is_in_group("chave"):
+		area.queue_free()
+		tem_chave = true
 
 
 func _on_hitbox_body_entered(body):
