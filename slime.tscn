@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpnmay73ykoyj"]
+[gd_scene load_steps=11 format=3 uid="uid://cpnmay73ykoyj"]
 
 [ext_resource type="Script" path="res://slime.gd" id="1_lspuh"]
 [ext_resource type="Texture2D" uid="uid://cuwfd0k6gtaxd" path="res://sprites/slime_stand_01.png" id="1_puvp4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d34cf64fcqsp8" path="res://sprites/slime_stand_02.png" id="2_p306r"]
 [ext_resource type="Texture2D" uid="uid://who4t21v30a3" path="res://sprites/slime_stand_03.png" id="3_g0h67"]
 [ext_resource type="Texture2D" uid="uid://ce5okhdghu0lb" path="res://sprites/slime_death_02.png" id="3_i7wfp"]
+[ext_resource type="AudioStream" path="res://sons/enemy_down.wav" id="7_obbwy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xtkyn"]
 animations = [{
@@ -81,5 +82,9 @@ target_position = Vector2(0, 40)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -30)
 shape = SubResource("CircleShape2D_iqxaw")
+
+[node name="som_down" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_obbwy")
+volume_db = -10.846
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

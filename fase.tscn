@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bm6o2p2eybn27"]
+[gd_scene load_steps=19 format=3 uid="uid://bm6o2p2eybn27"]
 
 [ext_resource type="PackedScene" uid="uid://630qfh2rdyov" path="res://personagem.tscn" id="3_qjj62"]
 [ext_resource type="Script" path="res://label_gameover.gd" id="4_08hrr"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bow60mbo48qs5" path="res://sprites/fundo2.png" id="7_moh34"]
 [ext_resource type="Texture2D" uid="uid://dgnj5pc8ql0x3" path="res://sprites/portal.png" id="9_3lwm3"]
 [ext_resource type="Texture2D" uid="uid://bt2ucswh7grdf" path="res://sprites/chave.png" id="10_iv10k"]
+[ext_resource type="AudioStream" path="res://sons/cyberpunk-ambient.mp3" id="11_oxakr"]
+[ext_resource type="Texture2D" uid="uid://c4q0ysrduhvuc" path="res://sprites/chao2.png" id="12_7j8ta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bldr"]
 size = Vector2(3353, 1000)
@@ -25,6 +27,9 @@ size = Vector2(100, 144)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecd7r"]
 size = Vector2(65, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3x6p"]
+size = Vector2(64, 16)
 
 [node name="fase" type="Node2D"]
 
@@ -453,7 +458,7 @@ metadata/_edit_lock_ = true
 
 [node name="porta" type="Area2D" parent="." groups=["porta"]]
 z_index = -10
-position = Vector2(2466, 416)
+position = Vector2(2466, 417)
 
 [node name="Sprite2D" type="Sprite2D" parent="porta"]
 position = Vector2(0, -85)
@@ -477,3 +482,28 @@ metadata/_edit_lock_ = true
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_ecd7r")
 metadata/_edit_lock_ = true
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_oxakr")
+volume_db = -9.176
+autoplay = true
+
+[node name="plataforma_movel" type="Node2D" parent="."]
+position = Vector2(1929, 279)
+
+[node name="plataforma" type="AnimatableBody2D" parent="plataforma_movel"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma_movel/plataforma"]
+shape = SubResource("RectangleShape2D_t3x6p")
+one_way_collision = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="plataforma_movel"]
+texture = ExtResource("12_7j8ta")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 16)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_movel"]
+root_node = NodePath("../plataforma")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp6lqp737i130"]
+
+[ext_resource type="Texture2D" uid="uid://cr47gg802odm3" path="res://sprites/fim de jogo.png" id="1_sqw8d"]
+[ext_resource type="PackedScene" uid="uid://630qfh2rdyov" path="res://personagem.tscn" id="2_isvkl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1kpf"]
+size = Vector2(801, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkwg"]
+size = Vector2(172, 667)
+
+[node name="fim_de_jogo" type="Node2D"]
+
+[node name="chao" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao"]
+position = Vector2(882, 709)
+shape = SubResource("RectangleShape2D_t1kpf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chao"]
+position = Vector2(474, 299.5)
+shape = SubResource("RectangleShape2D_8xkwg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="chao"]
+position = Vector2(1312, 316)
+shape = SubResource("RectangleShape2D_8xkwg")
+
+[node name="personagem" parent="." instance=ExtResource("2_isvkl")]
+position = Vector2(1130, 557)
+tem_camera = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(638, 355)
+scale = Vector2(1.24902, 1.24902)
+texture = ExtResource("1_sqw8d")

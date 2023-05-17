@@ -7,7 +7,11 @@ var estado="parado"
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var tem_chave=false
+@export var tem_camera=true
 
+func _ready():
+	if tem_camera==false:
+		$Camera2D.enabled=false
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("tiro"):
@@ -56,6 +60,7 @@ func _physics_process(delta):
 		if is_on_floor()==true:
 			estado="parado"	
 			$robo/AnimationPlayer.play("parado")
+			$robo/som_passos.play()
 			
 	if velocity.x>0:
 		$robo.scale.x=0.3
@@ -83,9 +88,13 @@ func _on_hitbox_area_entered(area):
 			var tween = self.create_tween()
 			tween.tween_property($label_pensamento, "modulate", Color.WHITE, 5.0)
 			tween.tween_property($label_pensamento, "modulate", Color(1.0,1.0,1.0,0.0), 2.0)
+		else:
+			get_tree().change_scene_to_file('res://fim_de_jogo.tscn')
+	
 	if area.is_in_group("chave"):
 		area.queue_free()
-		tem_chave = true
+		tem_chave=true
+
 
 
 func _on_hitbox_body_entered(body):

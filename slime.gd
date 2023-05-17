@@ -50,6 +50,7 @@ func sofre_dano():
 	estado="inativo"
 	$CollisionShape2D.disabled=true
 	$anim.play("desmaio")
+	$som_down.play()
 
 
 func _on_hitbox_body_entered(body):

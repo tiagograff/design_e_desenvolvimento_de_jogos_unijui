@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnyb5k4g0xo7q"]
+[gd_scene load_steps=10 format=3 uid="uid://dnyb5k4g0xo7q"]
 
 [ext_resource type="Texture2D" uid="uid://dkdxd0usg0i1v" path="res://sprites/robo_torso.png" id="1_5nc50"]
 [ext_resource type="Texture2D" uid="uid://bmbqwmmsf2rx0" path="res://sprites/robo_sphere.png" id="2_p1gpx"]
 [ext_resource type="Texture2D" uid="uid://d1y4g80klvkny" path="res://sprites/robo_limb.png" id="3_po8i2"]
+[ext_resource type="AudioStream" uid="uid://cbw3yc5p0o7gx" path="res://sons/footsteps_metal.wav" id="4_ltpds"]
 
 [sub_resource type="Animation" id="Animation_7bff7"]
 length = 0.001
@@ -245,6 +246,18 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-0.718859]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("som_passos:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_axrk6"]
@@ -490,6 +503,18 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-0.718859, -0.718859, -0.718859, -0.718859]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("som_passos:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 
 [sub_resource type="Animation" id="Animation_2vt6t"]
@@ -1022,6 +1047,7 @@ metadata/_edit_lock_ = true
 [node name="perna_e_1" type="Bone2D" parent="Skeleton2D/tronco"]
 position = Vector2(-24, 0)
 rotation = -0.35768
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -24, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/tronco/perna_e_1"]
@@ -1048,6 +1074,7 @@ metadata/_edit_lock_ = true
 z_index = -1
 position = Vector2(28, 0)
 rotation = -0.681582
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 28, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/tronco/perna_d_1"]
@@ -1126,3 +1153,6 @@ autoplay = "parado"
 libraries = {
 "": SubResource("AnimationLibrary_dgi2g")
 }
+
+[node name="som_passos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ltpds")
