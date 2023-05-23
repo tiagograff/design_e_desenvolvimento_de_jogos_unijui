@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d34cf64fcqsp8" path="res://sprites/slime_stand_02.png" id="2_p306r"]
 [ext_resource type="Texture2D" uid="uid://who4t21v30a3" path="res://sprites/slime_stand_03.png" id="3_g0h67"]
 [ext_resource type="Texture2D" uid="uid://ce5okhdghu0lb" path="res://sprites/slime_death_02.png" id="3_i7wfp"]
-[ext_resource type="AudioStream" path="res://sons/enemy_down.wav" id="7_obbwy"]
+[ext_resource type="AudioStream" uid="uid://bam5bhcomuf1a" path="res://sons/enemy_down.wav" id="7_obbwy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xtkyn"]
 animations = [{

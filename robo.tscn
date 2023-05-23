@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkdxd0usg0i1v" path="res://sprites/robo_torso.png" id="1_5nc50"]
 [ext_resource type="Texture2D" uid="uid://bmbqwmmsf2rx0" path="res://sprites/robo_sphere.png" id="2_p1gpx"]
 [ext_resource type="Texture2D" uid="uid://d1y4g80klvkny" path="res://sprites/robo_limb.png" id="3_po8i2"]
-[ext_resource type="AudioStream" uid="uid://cbw3yc5p0o7gx" path="res://sons/footsteps_metal.wav" id="4_ltpds"]
+[ext_resource type="AudioStream" uid="uid://bqa1cdwmwoak" path="res://sons/footsteps_metal.wav" id="4_ltpds"]
 
 [sub_resource type="Animation" id="Animation_7bff7"]
 length = 0.001
@@ -1047,7 +1047,6 @@ metadata/_edit_lock_ = true
 [node name="perna_e_1" type="Bone2D" parent="Skeleton2D/tronco"]
 position = Vector2(-24, 0)
 rotation = -0.35768
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -24, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/tronco/perna_e_1"]
@@ -1074,7 +1073,6 @@ metadata/_edit_lock_ = true
 z_index = -1
 position = Vector2(28, 0)
 rotation = -0.681582
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 28, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/tronco/perna_d_1"]
