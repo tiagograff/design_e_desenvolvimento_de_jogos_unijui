@@ -72,7 +72,7 @@ size = Vector2(65, 35)
 [node name="fase" type="Node2D"]
 
 [node name="personagem" parent="." instance=ExtResource("3_qjj62")]
-position = Vector2(128, 256)
+position = Vector2(132, 337)
 
 [node name="area_fundo" type="Area2D" parent="." groups=["buraco"]]
 

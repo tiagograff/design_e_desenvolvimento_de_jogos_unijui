@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var fireball_comp=preload("res://fireball.tscn")
+var estrelas_comp=preload("res://estrelas.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var estado="parado"
@@ -92,6 +93,9 @@ func _on_hitbox_area_entered(area):
 			get_tree().change_scene_to_file('res://fim_de_jogo.tscn')
 	
 	if area.is_in_group("chave"):
+		var estrelas=estrelas_comp.instantiate()
+		estrelas.position=area.position
+		get_node("..").add_child(estrelas)
 		area.queue_free()
 		tem_chave=true
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg31wdjvfrq2w"]
+
+[ext_resource type="Texture2D" uid="uid://o5ukyc8u6px0" path="res://sprites/particula.png" id="1_jexfx"]
+
+[sub_resource type="Curve" id="Curve_6r1aa"]
+_data = [Vector2(0.00705329, 0.516245), 0.0, 0.0, 0, 0, Vector2(0.489812, 1), 0.0, 0.0, 0, 0, Vector2(0.992947, 0.552347), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_stdqn"]
+offsets = PackedFloat32Array(0, 0.567613, 1)
+colors = PackedColorArray(0.39375, 0.39375, 0.39375, 1, 0.788235, 0.788235, 0.788235, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_kmy0w"]
+colors = PackedColorArray(0.418675, 0.415255, 0.475, 1, 1, 1, 1, 1)
+
+[node name="fumaca" type="CPUParticles2D"]
+amount = 64
+lifetime = 3.0
+texture = ExtResource("1_jexfx")
+direction = Vector2(0, -1)
+spread = 24.7
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_curve = SubResource("Curve_6r1aa")
+color_ramp = SubResource("Gradient_stdqn")
+color_initial_ramp = SubResource("Gradient_kmy0w")

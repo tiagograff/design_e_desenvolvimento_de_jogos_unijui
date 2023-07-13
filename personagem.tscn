@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://630qfh2rdyov"]
+[gd_scene load_steps=7 format=3 uid="uid://630qfh2rdyov"]
 
 [ext_resource type="Script" path="res://personagem.gd" id="1_8fe5j"]
 [ext_resource type="PackedScene" uid="uid://dnyb5k4g0xo7q" path="res://robo.tscn" id="2_gmh5c"]
+[ext_resource type="PackedScene" uid="uid://dg31wdjvfrq2w" path="res://fumaca.tscn" id="3_ikdxh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44p2h"]
 radius = 16.0
@@ -58,6 +59,9 @@ theme_override_constants/outline_size = 9
 theme_override_fonts/font = SubResource("SystemFont_7qh2f")
 theme_override_font_sizes/font_size = 20
 text = "Preciso da chave ..."
+
+[node name="fumaca" parent="." instance=ExtResource("3_ikdxh")]
+position = Vector2(2, -34)
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
